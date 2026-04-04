@@ -53,9 +53,29 @@ public class TeamTest {
     }
 
     @Test
-    public void equals_with_diff_fields_is_false() {
+    public void equals_with_diff_fields_is_false_branch1() {
+        Team team1 = new Team("test-team");
+        team1.addMember("Alice");
+        Team team2 = new Team("test-team");
+        team2.addMember("Bob");
+
+        assertFalse(team1.equals(team2));
+    }
+
+    @Test
+    public void equals_with_diff_fields_is_false_branch2() {
         Team team1 = new Team("test-team1");
         Team team2 = new Team("test-team2");
+
+        assertFalse(team1.equals(team2));
+    }
+
+    @Test
+    public void equals_with_diff_fields_is_false_branch3() {
+        Team team1 = new Team("test-team1");
+        Team team2 = new Team("test-team2");
+        team1.addMember("Alice");
+        team2.addMember("Bob");
 
         assertFalse(team1.equals(team2));
     }
